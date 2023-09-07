@@ -28,14 +28,28 @@
     <div id="result">Result will be displayed here.</div>
 
     <script>
-        // JavaScript code to add 1 + 1 and store it in a variable
+        // JavaScript code to add 1 + 1 and display the result
         document.getElementById("addButton").addEventListener("click", function() {
             // Perform the addition
             var result = 1 + 1;
 
             // Display the result
             document.getElementById("result").textContent = "Result: " + result;
+
+            // Send the result to a PHP variable
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "process.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("data=" + result);
         });
     </script>
+
+    <?php
+    // PHP code in the same file to process the data
+    if (isset($_POST["data"])) {
+        $data = $_POST["data"];
+        echo "<p>PHP received the result: $data</p>";
+    }
+    ?>
 </body>
 </html>
