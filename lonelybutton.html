@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Numbers</title>
+    <style>
+        /* Add some basic CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #result {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #addButton {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Numbers</h1>
+    <button id="addButton">Add 1 + 1</button>
+    <div id="result">Result will be displayed here.</div>
+
+    <script>
+        // JavaScript code to add 1 + 1 and store it in a variable
+        document.getElementById("addButton").addEventListener("click", function() {
+            // Perform the addition
+            var result = 1 + 1;
+
+            // Display the result
+            document.getElementById("result").textContent = "Result: " + result;
+        });
+    </script>
+</body>
+</html>
